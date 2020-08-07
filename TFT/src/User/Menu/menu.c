@@ -440,11 +440,11 @@ KEY_VALUES menuKeyGetValue(void)
 {
   if (menuType == MENU_TYPE_ICON)
   {
-    return (KEY_VALUES)KEY_GetValue(sizeof(rect_of_key) / sizeof(rect_of_key[0]), rect_of_key); // for normal menu
+    return (KEY_VALUES)KEY_GetValue(COUNT(rect_of_key), rect_of_key); // for normal menu
   }
   else if (menuType == MENU_TYPE_LISTVIEW)
   {
-    return (KEY_VALUES)KEY_GetValue(sizeof(rect_of_keyListView) / sizeof(rect_of_keyListView[0]), rect_of_keyListView); //for listview
+    return (KEY_VALUES)KEY_GetValue(COUNT(rect_of_keyListView), rect_of_keyListView); //for listview
   }
   else return KEY_IDLE;
 }
@@ -486,13 +486,15 @@ if(infoMachineSettings.onboard_sd_support == ENABLED && infoMachineSettings.auto
 
 #if LCD_ENCODER_SUPPORT
   loopCheckEncoder();
-  if(infoMenu.menu[infoMenu.cur] != menuST7920)
+  #if defined(ST7920_SPI) || defined(LCD2004_simulator)
+    if(infoMenu.menu[infoMenu.cur] != menuMarlinMode)
+  #endif
     {
       loopCheckEncoderSteps(); //check change in encoder steps
     }
 #endif
 
-#ifdef ST7920_SPI
+#if defined(ST7920_SPI) || defined(LCD2004_simulator)
   loopCheckMode();
 #endif
 
