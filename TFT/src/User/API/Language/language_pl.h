@@ -57,6 +57,7 @@
     #define PL_RESTORE                "Restore"
     #define PL_RESET                  "Reset"
     #define PL_DEFAULT                "Default"
+    #define PL_CLEAR                  "Clear"
     #define PL_NEXT                   "Next"
     #define PL_DISTANCE               "Distance"
     #define PL_INVALID_VALUE          "Invalid value(s)"
@@ -203,6 +204,7 @@
     #define PL_PRINT_ACCELERATION     "Print Acceleration"
     #define PL_RETRACT_ACCELERATION   "Retract Acceleration"
     #define PL_TRAVEL_ACCELERATION    "Travel Acceleration"
+    #define PL_JERK                   "Jerk"
     #define PL_BUMP_SENSITIVITY       "TMC bump sensitivity"
     #define PL_FWRETRACT              "FW Retraction"
     #define PL_FWRECOVER              "FW Retraction Recover"
@@ -262,5 +264,7 @@
     #define PL_TUNE_EXT_NEW_ESTEP     "New e-steps: %0.2f"
     #define PL_CONNECTION_SETTINGS    "Connection"
     #define PL_OFFSET_TOOL            "Offset 2nd Nozzle"
+    #define PL_HYBRID_THRESHOLD       "TMC HybridThreshold"
+    #define PL_NOTIFICATIONS          "Notifications"
 
 #endif

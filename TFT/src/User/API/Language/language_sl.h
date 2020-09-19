@@ -57,6 +57,7 @@
     #define SL_RESTORE                "Restore"
     #define SL_RESET                  "Reset"
     #define SL_DEFAULT                "Default"
+    #define SL_CLEAR                  "Clear"
     #define SL_NEXT                   "Next"
     #define SL_DISTANCE               "Distance"
     #define SL_INVALID_VALUE          "Invalid value(s)"
@@ -203,6 +204,7 @@
     #define SL_PRINT_ACCELERATION     "Pospešek tiska"
     #define SL_RETRACT_ACCELERATION   "Pospešek privleka fil."
     #define SL_TRAVEL_ACCELERATION    "Pospešek pomika"
+    #define SL_JERK                   "Jerk"
     #define SL_BUMP_SENSITIVITY       "TMC občutljivost trka"
     #define SL_FWRETRACT              "FW Retraction"
     #define SL_FWRECOVER              "FW Retraction Recover"
@@ -262,5 +264,7 @@
     #define SL_TUNE_EXT_NEW_ESTEP     "New e-steps: %0.2f"
     #define SL_CONNECTION_SETTINGS    "Connection"
     #define SL_OFFSET_TOOL            "Offset 2nd Nozzle"
+    #define SL_HYBRID_THRESHOLD       "TMC HybridThreshold"
+    #define SL_NOTIFICATIONS          "Notifications"
 
 #endif

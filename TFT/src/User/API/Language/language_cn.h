@@ -57,6 +57,7 @@
     #define CN_RESTORE                "恢复"
     #define CN_RESET                  "重置"
     #define CN_DEFAULT                "默认"
+    #define CN_CLEAR                  "Clear"
     #define CN_NEXT                   "下一个"
     #define CN_DISTANCE               "距离"
     #define CN_INVALID_VALUE          "没有有效的条件!"
@@ -203,6 +204,7 @@
     #define CN_PRINT_ACCELERATION     "打印加速度"
     #define CN_RETRACT_ACCELERATION   "回抽加速度"
     #define CN_TRAVEL_ACCELERATION    "空载加速度"
+    #define CN_JERK                   "Jerk"
     #define CN_BUMP_SENSITIVITY       "TMC堵转检测灵敏度"
     #define CN_FWRETRACT              "FW Retraction"
     #define CN_FWRECOVER              "FW Retraction Recover"
@@ -262,5 +264,7 @@
     #define CN_TUNE_EXT_NEW_ESTEP     "新的E-Steps: %0.2f"
     #define CN_CONNECTION_SETTINGS    "连接"
     #define CN_OFFSET_TOOL            "Offset 2nd Nozzle"
+    #define CN_HYBRID_THRESHOLD       "TMC HybridThreshold"
+    #define CN_NOTIFICATIONS          "Notifications"
 
 #endif

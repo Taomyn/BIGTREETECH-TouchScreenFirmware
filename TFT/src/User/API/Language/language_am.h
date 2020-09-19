@@ -57,6 +57,7 @@
     #define AM_RESTORE                "Restore"
     #define AM_RESET                  "Reset"
     #define AM_DEFAULT                "Default"
+    #define AM_CLEAR                  "Clear"
     #define AM_NEXT                   "Next"
     #define AM_DISTANCE               "Distance"
     #define AM_INVALID_VALUE          "Invalid value(s)"
@@ -203,6 +204,7 @@
     #define AM_PRINT_ACCELERATION     "Print Acceleration"
     #define AM_RETRACT_ACCELERATION   "Retract Acceleration"
     #define AM_TRAVEL_ACCELERATION    "Travel Acceleration"
+    #define AM_JERK                   "Jerk"
     #define AM_BUMP_SENSITIVITY       "TMC bump sensitivity"
     #define AM_FWRETRACT              "FW Retraction"
     #define AM_FWRECOVER              "FW Retraction Recover"
@@ -262,5 +264,7 @@
     #define AM_TUNE_EXT_NEW_ESTEP     "New e-steps: %0.2f"
     #define AM_CONNECTION_SETTINGS    "Connection"
     #define AM_OFFSET_TOOL            "Offset 2nd Nozzle"
-    
+    #define AM_HYBRID_THRESHOLD       "TMC HybridThreshold"
+    #define AM_NOTIFICATIONS          "Notifications"
+
 #endif

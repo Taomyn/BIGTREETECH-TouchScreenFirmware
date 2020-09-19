@@ -57,6 +57,7 @@
     #define TR_RESTORE                "Restore"
     #define TR_RESET                  "Sıfırla"
     #define TR_DEFAULT                "Default"
+    #define TR_CLEAR                  "Clear"
     #define TR_NEXT                   "Next"
     #define TR_DISTANCE               "Distance"
     #define TR_INVALID_VALUE          "Invalid value(s)"
@@ -203,6 +204,7 @@
     #define TR_PRINT_ACCELERATION     "Baskı İvmelenmesi"
     #define TR_RETRACT_ACCELERATION   "Geriçekme İvmelenmesi"
     #define TR_TRAVEL_ACCELERATION    "Gezinti İvmelenmesi"
+    #define TR_JERK                   "Jerk"
     #define TR_BUMP_SENSITIVITY       "TMC çarpma hassasiyeti"
     #define TR_FWRETRACT              "FW Retraction"
     #define TR_FWRECOVER              "FW Retraction Recover"
@@ -262,5 +264,7 @@
     #define TR_TUNE_EXT_NEW_ESTEP     "New e-steps: %0.2f"
     #define TR_CONNECTION_SETTINGS    "Connection"
     #define TR_OFFSET_TOOL            "Offset 2nd Nozzle"
+    #define TR_HYBRID_THRESHOLD       "TMC HybridThreshold"
+    #define TR_NOTIFICATIONS          "Notifications"
 
 #endif

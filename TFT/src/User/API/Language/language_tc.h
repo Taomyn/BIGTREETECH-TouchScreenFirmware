@@ -57,6 +57,7 @@
     #define TC_RESTORE                "恢復"
     #define TC_RESET                  "重設"
     #define TC_DEFAULT                "默認"
+    #define TC_CLEAR                  "Clear"
     #define TC_NEXT                   "下一個"
     #define TC_DISTANCE               "距離"
     #define TC_INVALID_VALUE          "沒有有效的條件!"
@@ -203,6 +204,7 @@
     #define TC_PRINT_ACCELERATION     "列印加速度"
     #define TC_RETRACT_ACCELERATION   "回抽加速度"
     #define TC_TRAVEL_ACCELERATION    "空跑加速度"
+    #define TC_JERK                   "Jerk"
     #define TC_BUMP_SENSITIVITY       "堵料檢測靈敏度"
     #define TC_FWRETRACT              "FW Retraction"
     #define TC_FWRECOVER              "FW Retraction Recover"
@@ -262,5 +264,7 @@
     #define TC_TUNE_EXT_NEW_ESTEP     "New e-steps: %0.2f"
     #define TC_CONNECTION_SETTINGS    "连接"
     #define TC_OFFSET_TOOL            "Offset 2nd Nozzle"
+    #define TC_HYBRID_THRESHOLD       "TMC HybridThreshold"
+    #define TC_NOTIFICATIONS          "Notifications"
 
 #endif

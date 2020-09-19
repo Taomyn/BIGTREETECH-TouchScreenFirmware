@@ -57,6 +57,7 @@
     #define DE_RESTORE                "Restore"
     #define DE_RESET                  "Resetten"
     #define DE_DEFAULT                "Default"
+    #define DE_CLEAR                  "Clear"
     #define DE_NEXT                   "Next"
     #define DE_DISTANCE               "Distance"
     #define DE_INVALID_VALUE          "Invalid value(s)"
@@ -203,6 +204,7 @@
     #define DE_PRINT_ACCELERATION     "Print Acceleration"
     #define DE_RETRACT_ACCELERATION   "Retract Acceleration"
     #define DE_TRAVEL_ACCELERATION    "Travel Acceleration"
+    #define DE_JERK                   "Jerk"
     #define DE_BUMP_SENSITIVITY       "TMC bump sensitivity"
     #define DE_FWRETRACT              "FW Retraction"
     #define DE_FWRECOVER              "FW Retraction Recover"
@@ -262,5 +264,7 @@
     #define DE_TUNE_EXT_NEW_ESTEP     "New e-steps: %0.2f"
     #define DE_CONNECTION_SETTINGS    "Connection"
     #define DE_OFFSET_TOOL            "Offset 2nd Nozzle"
+    #define DE_HYBRID_THRESHOLD       "TMC HybridThreshold"
+    #define DE_NOTIFICATIONS          "Notifications"
 
 #endif

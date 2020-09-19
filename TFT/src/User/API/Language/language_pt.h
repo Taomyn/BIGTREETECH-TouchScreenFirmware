@@ -57,6 +57,7 @@
     #define PT_RESTORE                "Restore"
     #define PT_RESET                  "Reset"
     #define PT_DEFAULT                "Default"
+    #define PT_CLEAR                  "Clear"
     #define PT_NEXT                   "Next"
     #define PT_DISTANCE               "Distance"
     #define PT_INVALID_VALUE          "Invalid value(s)"
@@ -203,6 +204,7 @@
     #define PT_PRINT_ACCELERATION     "Print Acceleration"
     #define PT_RETRACT_ACCELERATION   "Retract Acceleration"
     #define PT_TRAVEL_ACCELERATION    "Travel Acceleration"
+    #define PT_JERK                   "Jerk"
     #define PT_BUMP_SENSITIVITY       "TMC bump sensitivity"
     #define PT_FWRETRACT              "FW Retraction"
     #define PT_FWRECOVER              "FW Retraction Recover"
@@ -262,5 +264,7 @@
     #define PT_TUNE_EXT_NEW_ESTEP     "New e-steps: %0.2f"
     #define PT_CONNECTION_SETTINGS    "Connection"
     #define PT_OFFSET_TOOL            "Offset 2nd Nozzle"
+    #define PT_HYBRID_THRESHOLD       "TMC HybridThreshold"
+    #define PT_NOTIFICATIONS          "Notifications"
 
 #endif

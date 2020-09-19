@@ -57,6 +57,7 @@
     #define GR_RESTORE                "Restore"
     #define GR_RESET                  "Επαναφορά"
     #define GR_DEFAULT                "Default"
+    #define GR_CLEAR                  "Clear"
     #define GR_NEXT                   "Next"
     #define GR_DISTANCE               "Distance"
     #define GR_INVALID_VALUE          "Invalid value(s)"
@@ -203,6 +204,7 @@
     #define GR_PRINT_ACCELERATION     "Επιτάχυνση εκτύπωσης"
     #define GR_RETRACT_ACCELERATION   "Eπιτάχυνση ανάκλησης"
     #define GR_TRAVEL_ACCELERATION    "Επιτάχυνση ταξιδιού"
+    #define GR_JERK                   "Jerk"
     #define GR_BUMP_SENSITIVITY       "TMC ευαισθησία χτυπήματος"
     #define GR_FWRETRACT              "FW Retraction"
     #define GR_FWRECOVER              "FW Retraction Recover"
@@ -262,5 +264,7 @@
     #define GR_TUNE_EXT_NEW_ESTEP     "New e-steps: %0.2f"
     #define GR_CONNECTION_SETTINGS    "Connection"
     #define GR_OFFSET_TOOL            "Offset 2nd Nozzle"
+    #define GR_HYBRID_THRESHOLD       "TMC HybridThreshold"
+    #define GR_NOTIFICATIONS          "Notifications"
 
 #endif

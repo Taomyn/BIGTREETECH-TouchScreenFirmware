@@ -57,6 +57,7 @@
     #define CA_RESTORE                "Restore"
     #define CA_RESET                  "Reset"
     #define CA_DEFAULT                "Default"
+    #define CA_CLEAR                  "Clear"
     #define CA_NEXT                   "Next"
     #define CA_DISTANCE               "Distance"
     #define CA_INVALID_VALUE          "Invalid value(s)"
@@ -203,6 +204,7 @@
     #define CA_PRINT_ACCELERATION     "Acceleració Impressió"
     #define CA_RETRACT_ACCELERATION   "Acceleració Retracció"
     #define CA_TRAVEL_ACCELERATION    "Acceleració Viatge"
+    #define CA_JERK                   "Jerk"
     #define CA_BUMP_SENSITIVITY       "Sensibilitat al topall TMC"
     #define CA_FWRETRACT              "Retracció de FW"
     #define CA_FWRECOVER              "Recuperació de Retracció de FW"
@@ -262,5 +264,7 @@
     #define CA_TUNE_EXT_NEW_ESTEP     "New e-steps: %0.2f"
     #define CA_CONNECTION_SETTINGS    "Connection"
     #define CA_OFFSET_TOOL            "Offset 2nd Nozzle"
+    #define CA_HYBRID_THRESHOLD       "TMC HybridThreshold"
+    #define CA_NOTIFICATIONS          "Notifications"
 
 #endif
