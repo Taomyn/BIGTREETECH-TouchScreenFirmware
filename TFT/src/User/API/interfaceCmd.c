@@ -399,7 +399,8 @@ void sendQueueCmd(void)
         case 29: //M29
           if (!fromTFT)
           {
-            storeCmd("M105\nM114\nM220\nM221\n");
+            mustStoreScript("M105\nM114\nM220\n");
+            storeCmd("M221 D%d\n",heatGetCurrentTool());
             ispolling = true;
           }
             break;
@@ -890,17 +891,23 @@ void sendQueueCmd(void)
 
         case 92: //G92
         {
-          AXIS i;
           bool coorRelative = coorGetRelative();
           bool eRelative = eGetRelative();
           // Set to absolute mode
           coorSetRelative(false);
           eSetRelative(false);
-          for(i=X_AXIS;i<TOTAL_AXIS;i++)
+          for(AXIS i = X_AXIS; i < TOTAL_AXIS; i++)
           {
             if(cmd_seen(axis_id[i]))
             {
-              coordinateSetAxisTarget(i,cmd_float());
+              coordinateSetAxisTarget(i, cmd_float());
+              #ifdef FIL_RUNOUT_PIN
+                if (i == E_AXIS)
+                {
+                  // Reset SFS status, Avoid false Filament runout caused by G92 resetting E-axis position
+                  FIL_SFS_SetAlive(true);
+                }
+              #endif
             }
           }
           // Restore mode
