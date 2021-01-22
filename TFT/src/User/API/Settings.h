@@ -18,22 +18,28 @@ enum
   sign_count
 };
 
+typedef enum
+{
+  FEEDRATE_XY = 0,
+  FEEDRATE_Z,
+  FEEDRATE_E,
+  FEEDRATE_COUNT,
+} FEEDRATE_INDEX;
+
 // Config version support
 // change if new elements/keywords are added/removed/changed in the configuration.h Format YYYYMMDD
-// this number should match the CONFIG_VERSION in configuration.h
-#define CONFIG_SUPPPORT 20201218
+// this number should match CONFIG_VERSION in configuration.h
+#define CONFIG_SUPPPORT 20210105
 
 #define FONT_FLASH_SIGN       20200908 //(YYYYMMDD) change if fonts require updating
-#define CONFIG_FLASH_SIGN     20201221 //(YYYYMMDD) change if any keyword(s) in config.ini is added or removed
-#define LANGUAGE_FLASH_SIGN   20201218 //(YYYYMMDD) change if any keyword(s) in language pack is added or removed
-#define ICON_FLASH_SIGN       20201028 //(YYYYMMDD) change if any icon(s) is added or removed
+#define CONFIG_FLASH_SIGN     20210107 //(YYYYMMDD) change if any keyword(s) in config.ini is added or removed
+#define LANGUAGE_FLASH_SIGN   20210121 //(YYYYMMDD) change if any keyword(s) in language pack is added or removed
+#define ICON_FLASH_SIGN       20210105 //(YYYYMMDD) change if any icon(s) is added or removed
 
 #define FONT_CHECK_SIGN       (FONT_FLASH_SIGN + WORD_UNICODE)
 #define CONFIG_CHECK_SIGN     (CONFIG_FLASH_SIGN + STRINGS_STORE_ADDR)
 #define LANGUAGE_CHECK_SIGN   (LANGUAGE_FLASH_SIGN + LANGUAGE_ADDR)
 #define ICON_CHECK_SIGN       (ICON_FLASH_SIGN + ICON_ADDR(0))
-
-#define ITEM_BAUDRATE_NUM     9
 
 #define MAX_EXT_COUNT         6
 #define MAX_HOTEND_COUNT      6
@@ -57,26 +63,28 @@ enum
 #define DISABLED  0
 #define ENABLED   1
 #define AUTO      2
+#define HIGH      1
+#define LOW       0
 
 typedef enum
 {
-  MARLIN = 0,
-  SERIAL_TSC,
+  MODE_MARLIN = 0,
+  MODE_SERIAL_TSC,
   MODE_COUNT
-}LCD_MODE;
+} LCD_MODE;
 
 typedef enum
 {
   LCD2004 = 0,
   LCD12864
-}LCD_MARLIN_MODE;
+} MARLIN_MODE_TYPE;
 
 typedef struct
 {
 // General Settings
-  uint8_t  status_screen;
-  uint32_t baudrate;
-  uint8_t  language;
+  uint8_t status_screen;
+  uint8_t baudrate;
+  uint8_t language;
 
   uint16_t title_bg_color;
   uint16_t bg_color;
@@ -117,9 +125,11 @@ typedef struct
   uint8_t  fan_max[MAX_FAN_COUNT];
   int16_t  machine_size_min[AXIS_NUM];  // X, Y, Z
   int16_t  machine_size_max[AXIS_NUM];  // X, Y, Z
-  uint16_t axis_speed[SPEED_COUNT];
+  uint16_t xy_speed[SPEED_COUNT];
+  uint16_t z_speed[SPEED_COUNT];
   uint16_t ext_speed[SPEED_COUNT];
   uint8_t  auto_load_leveling;
+  uint8_t  touchmi_sensor;
   uint8_t  onboardSD;
   uint8_t  m27_refresh_time;
   uint8_t  m27_active;
@@ -129,11 +139,11 @@ typedef struct
   float    resume_purge_len;
   float    pause_pos[AXIS_NUM-1];  // X, Y
   float    pause_z_raise;
-  uint16_t pause_feedrate[TOTAL_AXIS];  // X, Y, Z, E
+  uint16_t pause_feedrate[FEEDRATE_COUNT];  // XY, Z, E
   uint8_t  level_edge;
   float    level_z_pos;
   float    level_z_raise;
-  uint16_t level_feedrate[AXIS_NUM];  // X, Y, Z
+  uint16_t level_feedrate[FEEDRATE_COUNT - 1];  // XY, Z
   uint16_t preheat_temp[PREHEAT_COUNT];
   uint16_t preheat_bed[PREHEAT_COUNT];
 
@@ -167,12 +177,13 @@ typedef struct
   uint8_t  lcd_idle_brightness;
   uint8_t  lcd_idle_timer;
   uint8_t  xy_offset_probing;
+  uint8_t  z_steppers_alignment;
 
 // Start, End & Cancel G-codes
   uint8_t  send_start_gcode;
   uint8_t  send_end_gcode;
   uint8_t  send_cancel_gcode;
-}SETTINGS;
+} SETTINGS;
 
 typedef struct
 {
@@ -199,16 +210,28 @@ typedef struct
  */
 typedef enum
 {
-  BL_DISABLED = 0, // Bed Leveling Diabled
-  BL_ABL,          // Auto Bed Leveling (ABL)
-  BL_BBL,          // Bilinear Bed Leveling (BBL)
-  BL_UBL,          // Unified Bed Leveling (UBL)
-  BL_MBL,          // Mesh Bed Leveling (MBL)
+  BL_DISABLED = DISABLED, // Bed Leveling Diabled
+  BL_ABL,  // Auto Bed Leveling (ABL)
+  BL_BBL,  // Bilinear Bed Leveling (BBL)
+  BL_UBL,  // Unified Bed Leveling (UBL)
+  BL_MBL,  // Mesh Bed Leveling (MBL)
 } BL_TYPE;
+
+/**
+ * Firmware type
+ */
+typedef enum
+{
+  FW_NOT_DETECTED,
+  FW_MARLIN,
+  FW_REPRAPFW,
+  FW_KLIPPER,
+  FW_UNKNOWN,
+} FW_TYPE;
 
 typedef struct
 {
-  int8_t isMarlinFirmware;
+  FW_TYPE firmwareType;
   uint8_t EEPROM;
   uint8_t autoReportTemp;
   BL_TYPE leveling;
@@ -224,8 +247,7 @@ typedef struct
   uint8_t long_filename_support;
   uint8_t babyStepping;
   uint8_t softwareEndstops;
-}MACHINESETTINGS;
-
+} MACHINESETTINGS;
 
 extern SETTINGS infoSettings;
 extern MACHINESETTINGS infoMachineSettings;
